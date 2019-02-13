@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,Chrome=1" />
+  <meta name="description" content="《牛仔娱乐城》，丰富鱼阵、炫酷技能，捕鱼乐趣全面提升；更有全新比赛玩法，邀你来战，3D绚丽游戏场景，多样玩法，让你畅享捕鱼的乐趣！" />
+  <title>牛仔娱乐城</title>
+  <!-- <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" /> -->
+  <link rel="stylesheet" href="__STATIC__/pc.css" />
+  <script src="__STATIC__/js/jquery-1.8.3.min.js"></script>
+  <script src="__STATIC__/js/avalon-2.2.6.js"></script>
+  <script src="__STATIC__/js/download.js"></script>
+  <style>.ms-controller{visibility:hidden;}</style>
+</head>
+<body ms-controller="page">
+  <div class="container">
+    <div class="block b1">
+      <div class="logo"></div>
+    </div>
+    <div class="block b2">
+      <div class="dl">
+        <div class="left">
+          <ul class="qrcode">
+            <li class="qr_apple" ms-on-click="@toggleDLApple"></li>
+            <li class="qr_android" ms-on-click="@toggleDLAndroid"></li>
+          </ul>
+          <div class="code"><span>{{@code}}</span></div>
+        </div>
+        <div class="right">
+          <ul>
+            <li class="btn_apple" ms-on-click="@toggleDLApple" style="margin-top: 230px;"></li>
+            <li class="btn_android" ms-on-click="@toggleDLAndroid"></li>
+            <li class="btn_pc" ms-on-click="@toggleDLPc"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="block b3">
+      <div class="left">
+        <ul class="rmlist">
+          <li ms-for="(k,v) in @GAMES_ALL | orderBy(orderRS) | limitBy(3)">
+            <a ms-class="'icon_'+v.en" ms-on-click="@toggleDLAndroid"></a><b>{{v.cn}}</b><i>{{v.rs}}人在线</i>
+          </li>
+        </ul>
+      </div>
+      <div class="right">
+        <ul class="gmlist">
+          <li ms-for="(k,v) in @GAMES_ALL">
+            <a ms-class="'icon_'+v.en" ms-on-click="@toggleDLAndroid"></a><b>{{v.cn}}</b>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="block b4">
+      <div class="left"></div>
+      <div class="right">
+        <ul class="rklist">
+          <li ms-for="(k,v) in @GAMES_ALL | limitBy(8)"><i>{{v.cn}}</i><b>{{v.rs}}人</b></li>
+        </ul>
+      </div>
+    </div>
+    <div class="block footer">
+      <p>
+        健康游戏公告:
+          抵制不良游戏 拒绝盗版游戏 注意自我保护 谨防上当受骗
+          适度游戏益脑 沉迷游戏伤身 合理安排时间 享受健康生活
+      </p>
+      <!-- <p>
+        Copyright 2007-{{@year}} 杭州五湖网络科技有限公司版权所有&nbsp;
+        增值电信业务经营许可证：浙B2-20110285&nbsp;
+        ICP备案号：辽ICP备14010577号
+      </p>
+      <p>
+        文化部网络经营许可证：浙网文(2016)0382-252号&nbsp;
+        文化部网络游戏产品备案号：文网文[2010]307号
+      </p> -->
+    </div>
+  </div>
+<script>
+$(function(){
+
+  function mt_rand (min, max) { // 随机数
+    var argc = arguments.length;
+    if (argc === 0) {
+      min = 0;
+      max = 2147483647;
+    } else if (argc === 1) {
+      throw new Error('Warning: mt_rand() expects exactly 2 parameters, 1 given');
+    } else {
+      min = parseInt(min, 10);
+      max = parseInt(max, 10);
+    }
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  var vm = avalon.define({
+    $id: 'page',
+    GAMES_ALL: [
+      {en: '3Dby',cn: '3D捕鱼',  rs: 0, avg:900},
+      {en: 'brnn',cn: '百人牛牛',rs: 0, avg:300},
+      {en: 'dznn',cn: '对战牛牛',rs: 0, avg:220},
+      {en: 'jcby',cn: '金蟾捕鱼',rs: 0, avg:240},
+      {en: 'jsys',cn: '金鲨银鲨',rs: 0, avg:180},
+      {en: 'nzby',cn: '牛仔娱乐城',rs: 0, avg:300},
+      {en: 'nznh',cn: '哪吒闹海',rs: 0, avg:270},
+      {en: 'sgj', cn: '水果机',  rs: 0, avg:500},
+      {en: 'shz', cn: '水浒传',  rs: 0, avg:150},
+      {en: 'ysz', cn: '赢三张',  rs: 0, avg:100}
+    ],
+    year: (new Date().getFullYear()),
+    code: {$n},
+    random_rs:function(){
+      avalon.each(this.GAMES_ALL, function (i, b) {
+        // 正弦曲线 y=Asin(ωx+φ)+k
+        // 系数 = 0.5*sin(i*t)+1    // 0.5~1.5
+        var now = new Date;
+        var c = mt_rand(1, 2) / 10 * Math.sin((i + 1) * now.getMilliseconds()) + 1;
+        b.rs = Math.ceil(c * b.avg) + mt_rand(1, 10);
+      });
+    },
+    orderRS:function(a,b,c,d){
+      // debugger;
+    },
+    toggleDLAndroid:function(){
+      download2();
+    },
+    toggleDLApple:function(){
+      // window.location.href = "https://itunes.apple.com/cn/app/id1327581949";
+      download2();
+    },
+    toggleDLPc:function(){
+      download2();
+    }
+  });
+  vm.random_rs();
+  setInterval(function () {
+    vm.random_rs();
+  }, 3000);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<IfModule rewrite_module>
+  Options +FollowSymlinks -Multiviews
+  RewriteEngine On
+  
+  #如果文件存在, 就直接访问文件, 不进行Rewrite
+  RewriteCond %{REQUEST_FILENAME} !-f
+  
+  #如果目录存在, 就直接访问目录, 不进行Rewrite
+  RewriteCond %{REQUEST_FILENAME} !-d
+  
+  #如果请求包含static/demo/sys/目录, 不进行重写
+  RewriteCond %{REQUEST_URI} !^(\/static\/(.*)|\/demo\/(.*)|\/sys\/(.*))$ [NC]
+
+  ###### Server API  Apache 2.0 Handler #####
+  #RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]
+  
+  ###### Server API  CGI/FastCGI ###### 以下两种全兼容
+  # 方法一
+  #RewriteRule ^(.*)$ index.php?s=$1 [QSA,PT,L]
+  #RewriteRule ^([0-9]*)$ index.php?s=/Show/index/roomnum/$1 [QSA,PT,L]
+
+  #RewriteRule ^([\D]+[\S]*)$ index.php?s=$1 [QSA,PT,L]
+  #RewriteRule ^([\d]+)$ index.php?s=/Show/index/roomnum/$1 [QSA,PT,L]
+
+  # 方法二
+  RewriteRule ^(.*)$ index.php [L,E=PATH_INFO:$1]
+  
+  #RewriteRule ^([0-9]*)$ index.php/Show/index/roomnum/$1/
+</IfModule>
+
+<IfModule mod_deflate.c>
+  #压缩率, 6是建议值.
+  #DeflateCompressionLevel 6
+
+  #排除不需要压缩的文件
+  #BrowserMatch ^Mozilla/4 gzip-only-text/html
+  #BrowserMatch ^Mozilla/4\.0[678] no-gzip
+  #BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+  #SetEnvIfNoCase Request_URI .(?:html|htm)$ no-gzip dont-varySetEnvIfNoCase
+  #SetEnvIfNoCase Request_URI .(?:gif|jpe?g|png)$ no-gzip dont-vary
+  #SetEnvIfNoCase Request_URI .(?:exe|t?gz|zip|bz2|sit|rar)$ no-gzip dont-vary
+  #SetEnvIfNoCase Request_URI .(?:pdf|doc)$ no-gzip dont-vary
+
+</IfModule>

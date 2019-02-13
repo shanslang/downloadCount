@@ -1,0 +1,324 @@
+@charset "utf-8";
+body {
+  padding:0px;
+  margin: 0px;
+  /*background: #fff url(http://appzy.nzbuyu.com/promotion/bg_01.jpg) no-repeat center top;*/
+  /*background: #fff url(images/bg_01.jpg) no-repeat center top;*/
+  /*background-image: url(http://appzy.nzbuyu.com/promotion/icon/bg_01.jpg), url(http://appzy.nzbuyu.com/promotion/icon/bg_02.jpg);*/
+  background-image: url(1/pic_02.png), url(1/pic_01.png), url(1/pic_03.png);
+  /*background-position: 950px top, 150px top;*/
+  background-position: 140px top, 330px top, 1550px top;
+  background-repeat: no-repeat;
+  font-family: SimHei, "Microsoft Yahei";
+}
+.container {
+  margin: 0 auto;
+  width: 1024px;
+  height: 1687px;
+  /*background: #fff url(http://appzy.nzbuyu.com/promotion/bg_02.jpg) no-repeat;*/
+  /*background: #fff url(http://appzy.nzbuyu.com/promotion/bg_02.jpg) no-repeat;*/
+  text-align: center;
+}
+.block {
+  position: relative;
+}
+.b1 {
+  margin-left:100px;
+  height: 520px;
+}
+.b2 {
+  height: 380px;
+}
+.b3 {
+  height: 358px;
+  padding-top: 20px;
+}
+.b4 {
+  margin-top: -40px;
+  height: 420px;
+  /*background: url(http://appzy.nzbuyu.com/promotion/box_fish.png) no-repeat center;*/
+  background: url(1/pic_phb.png) no-repeat center;
+}
+.logo {
+  /*background: url(http://appzy.nzbuyu.com/promotion/pic_logo.png) no-repeat;*/
+  /*background: url(http://appzy.nzbuyu.com/promotion/icon/pic_logo.png) no-repeat;*/
+  width: 305px;
+  height: 121px;
+}
+.dl {
+  width: 100%;
+  height: 100%;
+  ; }
+.b2 .dl .left, .b2 .dl .right {
+  height: 529px;
+  display: inline-block;
+  margin: 0px;
+  position: relative;
+  vertical-align: top;
+}
+.b2 .dl .left{
+  margin-top:60px;
+}
+.b2 .dl .left {
+  width: 590px;
+}
+.b2 .dl .right {
+  width: 360px;
+    top:-200px;
+    left:300px;
+}
+.code {
+  /*background: url(http://appzy.nzbuyu.com/promotion/pic_zi.png) no-repeat;*/
+  background: url(1/pic_xyhlb.png) no-repeat;
+  height: 55px;
+  width: 100%;
+  margin-left: -150px;
+}
+.code span {
+  font-weight: 700;
+  color: #FFFBBF;
+  font-size: 36px;
+  position: relative;
+  right: -100px;
+  margin-top: -2px;
+  display: inline-block;
+  background: url(1/pic_dhmk.png) no-repeat;
+  width: 165px;
+  height: 43px;
+  line-height:43px;
+}
+ul.qrcode {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+ul.qrcode li {
+  display: inline-block;
+  width: 219px;
+  height: 185px;
+  margin: 2px 20px;
+}
+/*ul.qrcode li.qr_apple {
+  background: url(http://appzy.nzbuyu.com/web/tg/images/pic_pgewm.png) no-repeat;
+}
+ul.qrcode li.qr_android {
+  background: url(http://appzy.nzbuyu.com/web/tg/images/pic_azewm.png) no-repeat;
+}*/
+.b2 .dl .right ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+}
+.b2 .dl .right ul li {
+  display: block;
+  margin: 0 100px -20px 100px;
+}
+.btn_apple, .btn_android ,.btn_pc{
+  width: 337px;
+  height: 113px;
+  cursor:pointer;
+}
+.b2 .right{
+    background: url(1/pic_xzfs.png) no-repeat center;
+}
+
+.btn_apple {
+  background: url(1/pic_pgxz.png) no-repeat;
+}
+.btn_android {
+  background: url(1/bt_azxz.png) no-repeat;
+}
+.btn_pc {
+  background: url(1/bt_pcxz.png) no-repeat;
+}
+
+
+.b3 .left, .b3 .right {
+  display: inline-block;
+  height: 100px;
+  vertical-align: top;
+}
+.b3 .left {
+  background: url(1/pic_rmyx.png) no-repeat;
+  width: 368px;
+  height: 343px;
+  margin-top: -100px;
+}
+.b3 .right {
+  background: url(1/pic_phb.png) no-repeat;
+  width: 635px;
+  height: 342px;
+  margin-top: -100px;
+}
+ul.rmlist {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  height: 300px;
+  top: 40px;
+  position: relative;
+}
+ul.rmlist li {
+  height: 98px;
+  position: relative;
+}
+ul.rmlist li a, ul.rmlist li b, ul.rmlist li i {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+}
+ul.rmlist li a {
+  display: inline-block;
+  width: 85px;
+  height: 85px;
+  left: 70px;
+  top: 8px;
+  cursor:pointer;
+}
+ul.rmlist li b {
+  width: 160px;
+  left: 180px;
+  top: 16px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 24px;
+  color: #FEEE25;
+}
+ul.rmlist li i {
+  right: 20px;
+  top: 56px;
+  width: 170px;
+  color: #B47A48;
+  font-size: 22px;
+  font-weight: 400;
+  text-align: right;
+  font-style: normal;
+}
+/* 3D捕鱼 */
+.icon_3Dby {
+  background: url(http://appzy.nzbuyu.com/promotion/icon/85x85_3Dby.png) no-repeat;
+}
+/* 百人牛牛 */
+.icon_brnn {
+  background: url(http://appzy.nzbuyu.com/promotion/icon/85x85_brnn.png) no-repeat;
+}
+/* 对战牛牛 */
+.icon_dznn {
+  background: url(http://appzy.nzbuyu.com/promotion/icon/85x85_dznn.png) no-repeat;
+}
+/* 金蟾捕鱼 */
+.icon_jcby {
+  background: url(http://appzy.nzbuyu.com/promotion/icon/85x85_jcby.png) no-repeat;
+}
+/* 金鲨银鲨 */
+.icon_jsys {
+  background: url(http://appzy.nzbuyu.com/promotion/icon/85x85_jsys.png) no-repeat;
+}
+/* 牛仔捕鱼 */
+.icon_nzby {
+  background: url(http://appzy.nzbuyu.com/promotion/icon/85x85_nzby.png) no-repeat;
+}
+/* 哪吒闹海 */
+.icon_nznh {
+  background: url(http://appzy.nzbuyu.com/promotion/icon/85x85_nznh.png) no-repeat;
+}
+/* 水果机 */
+.icon_sgj {
+  background: url(http://appzy.nzbuyu.com/promotion/icon/85x85_sgj.png) no-repeat;
+}
+/* 水浒传 */
+.icon_shz {
+  background: url(http://appzy.nzbuyu.com/promotion/icon/85x85_shz.png) no-repeat;
+}
+/* 赢三张 */
+.icon_ysz {
+  background: url(http://appzy.nzbuyu.com/promotion/icon/85x85_ysz.png) no-repeat;
+}
+ul.gmlist {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  top: 50px;
+  position: relative;
+}
+ul.gmlist li {
+  display: inline-block;
+  width: 100px;
+  height: 120px;
+  margin: 10px 8px;
+}
+ul.gmlist li a {
+  display: inline-block;
+  width: 85px;
+  height: 85px;
+  vertical-align: top;
+  cursor:pointer;
+}
+ul.gmlist li b {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 18px;
+  color: #BB814F;
+  width: 94px;
+  height: 24px;
+  line-height: 24px;
+  background: url(http://appzy.nzbuyu.com/promotion/pic_yxmck.png) no-repeat;
+  vertical-align: middle;
+  margin-top: 4px;
+}
+.b4 .left, .b4 .right {
+  display: inline-block;
+  vertical-align: top;
+}
+.b4 .left {
+  background: url(http://appzy.nzbuyu.com/promotion/fish.png) no-repeat 10%;
+  width: 610px;
+  height: 295px;
+  position: relative;
+  top: 90px;
+}
+.b4 .right {
+  width: 280px;
+  height: 295px;
+  margin-left: 50px;
+  position: relative;
+  top: 100px;
+}
+ul.rklist {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+ul.rklist li {
+  height: 34px;
+  line-height: 34px;
+  color: #F3AC6E;
+  font-weight: 700;
+  font-size: 22px;
+  position: relative;
+}
+ul.rklist li i, ul.rklist li b {
+  display: inline-block;
+  position: absolute;
+}
+ul.rklist li i {
+  left: 14px;
+  width: 120px;
+  text-align: left;
+}
+ul.rklist li b {
+  right: 26px;
+  width: 120px;
+  text-align: right;
+}
+.footer p {
+  height: 24px;
+  line-height: 24px;
+  vertical-align: middle;
+  padding: 0px;
+  margin: 0px;
+  font-size: 14px;
+}

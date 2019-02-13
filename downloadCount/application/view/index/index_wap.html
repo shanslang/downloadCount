@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,Chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="format-detection" content="address=no" />
+  <meta name="description" content="更有全新比赛玩法，邀你来战，3D绚丽游戏场景，多样玩法，让你畅享捕鱼的乐趣！超多奖励超多Q币、丰富实物奖励给你爆机惊喜！超火爆超人气捕鱼平台等你来玩!" />
+  <meta name="keywords" content="捕鱼手游,猎鱼达人3D网络版，休闲手游，休闲游戏，益智游戏" />
+  <title>牛仔娱乐城</title>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="__STATIC__/css.css" />
+<script>
+    var phoneWidth = parseInt(window.screen.width);
+    var phoneScale = phoneWidth / 640;
+    var ua = navigator.userAgent;
+    if (/Android (\d+\.\d+)/.test(ua)) {
+      var version = parseFloat(RegExp.$1);
+      // andriod 2.3
+      if (version > 2.3) {
+        document.write('<meta name="viewport" content="width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">');
+        // andriod 2.3以上
+      } else {
+        document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+      }
+      // 其他系统
+    } else {
+      document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+    }
+    if (IsPC()) {
+      document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+    }
+    function IsPC() {
+      var userAgentInfo = navigator.userAgent;
+      var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
+      var flag = true;
+      for (var v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) > 0) {
+          flag = false;
+          break;
+        }
+      }
+      return flag;
+    }
+</script>
+</head>
+<body>
+  <header>
+    <span><img src="__STATIC__/s1/icon.png" style="margin-right: 10px;" /></span>
+    <h1>牛仔娱乐城</h1>
+    <p>2019正版3D捕鱼棋牌合集</p>
+    <a href="javascript:void(0);" onclick="download2();"></a> 
+  </header>
+  <div class="top1">
+    <span id="num2"></span>
+    <!-- 兑换码直接修改数字即可 -->
+    <span id="num">{$n}</span>
+    <!-- ios下载地址对应修改 -->
+    <a href="javascript:void(0);" onclick="download2()" class="ios"></a>
+    <!-- android下载地址对应修改 -->
+    <a href="javascript:void(0);" onclick="download2()" class="android"></a>
+    <!-- <a href="javascript:void(0);" onclick="download2()" class="PC"></a> -->
+  </div>
+  <div class="top2">
+    <!-- 领取红包地址对应修改 -->
+    <!-- <a class="hongbao" href="http://114.55.28.34:83/home/download?sign=nz2000&url=https://itunes.apple.com/cn/app/id1327581949"></a> -->
+    <!-- <a class="hongbao" onclick="download2();"></a> -->
+  </div>
+  
+<!-- <script>var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1262386994'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1262386994%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script> -->
+<script src="__STATIC__/js/jquery-1.8.3.min.js"></script>
+<script src="__STATIC__/js/download.js"></script>
+</body>
+</html>

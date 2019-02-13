@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="email=no">
+  <meta name="keywords" content="hhhh">
+  <meta content="hhhh">
+  <title>hhhh</title>
+  <style>
+
+  </style>
+</head>
+<body>
+<div class="bg">
+  <img src="images/zz.jpg" id="imgs" style="position:absolute;left:0;top:0;width:100%;height:100%;display:none;">
+</div>
+<script>
+var Ubrowser = {
+  versions: function () {
+    var u = navigator.userAgent,
+    app = navigator.appVersion;
+    return { //移动终端浏览器版本信息
+      trident: u.indexOf('Trident') > -1, //IE内核
+      presto: u.indexOf('Presto') > -1, //opera内核
+      webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+      gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+      mobile: !!u.match(/AppleWebKit.*Mobile.*/) || !!u.match(/AppleWebKit/), //是否为移动终端
+      ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+      android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+      iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者QQHD浏览器
+      iPad: u.indexOf('iPad') > -1, //是否iPad
+      webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+    };
+  }
+  (),
+  language: (navigator.browserLanguage || navigator.language).toLowerCase()
+};
+(function () {
+  var version = 0; //定义手机操作系统
+  if (Ubrowser.versions.android) {
+    document.getElementById("imgs").style.display = 'block';
+    version = 1;
+    //window.location.href = 'http://appzy1.nzbuyu.com/apk/niuzai6014.apk';
+     window.location.href='http://appzy1.xxx.com/apk/niuzai.apk'; //更改下载链接
+  } else if (Ubrowser.versions.iPhone) {
+    //alert('IOS下载');
+    window.location.href = 'https://itunes.xxx.com/cn/app/id1327581949';
+  } else {
+    //alert('PC下载');
+    //window.location.href='';
+  }
+})();
+</script>
+
+</body>
+</html>
